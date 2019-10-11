@@ -1,8 +1,9 @@
 import Vue from 'vue';
+import { ThisTypedComponentOptionsWithArrayProps } from 'vue/types/options';
 import App from './App.vue';
-import router from './router';
-import './registerServiceWorker';
 import vuetify from './plugins/vuetify';
+import './registerServiceWorker';
+import router from './router';
 
 Vue.config.productionTip = false;
 
@@ -10,4 +11,4 @@ new Vue({
   router,
   vuetify,
   render: (h) => h(App),
-}).$mount('#app');
+} as ThisTypedComponentOptionsWithArrayProps<Vue, object, object, object, never> & { vuetify: any }).$mount('#app');
